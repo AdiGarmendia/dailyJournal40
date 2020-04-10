@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles/journal.css" />
+	</head>
+	<body>
+		<h1>Adi's Daily Journal</h1>
+		<form action="">
+			<!-- Date of Entry -->
+			<fieldset>
+				<label for="journalDate">Date of Entry</label>
+				<input type="date" name="journalDate" id="journalDate" />
+			</fieldset>
+
+			<!-- Concepts Covered -->
+			<fieldset>
+				<label for="conceptsCovered">Concepts Covered</label>
+				<input type="text" name="conceptsCovered" id="conceptsCovered" />
+			</fieldset>
+
+			<!-- Journal Entry -->
+			<fieldset>
+				<label for="journalEntry">Journal Entry</label>
+				<textarea
+					name="journalEntry"
+					id="journalEntry"
+					cols="20"
+					rows="5"
+				></textarea>
+			</fieldset>
+
+			<!-- Mood for day -->
+			<fieldset>
+				<label for="moodDay">Mood for the Day</label>
+				<select name="moodDay" id="moodDay">
+					<option value="Happy">Happy</option>
+					<option value="OK">OK</option>
+					<option value="Sad">Sad</option>
+				</select>
+			</fieldset>
+		</form>
+
+		<!-- Submit button -->
+		<button>Record Journal Entry</button>
+	</body>
+</html>
