@@ -36,12 +36,17 @@ document
 					.then((data) => renderJournalEntries(data));
 			} else window.alert("Why ya do dat? Do it right.");
 		}
-		document.getElementsByName("moodFilter").forEach((element) =>
-			element.addEventListener("click", (event) => {
-				const mood = event.target.value;
-				API.getJournalEntries().then((data) => {
-					renderJournalEntries(data.filter((entry) => entry.mood === mood));
-				});
-			})
-		);
 	});
+const radioButton = document.getElementsByName("moodDay");
+radioButton.forEach((moodFilter) => {
+	moodFilter.addEventListener("click", (event) => {
+		const mood = event.target.value;
+		API.getJournalEntries().then((filteredEntries) => {
+			let filteredResults = filteredEntries.filter(
+				(entry) => entry.mood === mood
+			);
+			document.querySelector(".entryLog").innerHTML = "";
+			renderJournalEntries(filteredResults);
+		});
+	});
+});
