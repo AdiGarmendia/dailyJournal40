@@ -50,3 +50,14 @@ radioButton.forEach((moodFilter) => {
 		});
 	});
 });
+document.querySelector(".entryLog").addEventListener("click", (event) => {
+	if (event.target.id.startsWith("deleteButton--")) {
+		const entryID = event.target.id.split("--")[1];
+		API.deleteJournalEntry(entryID)
+			.then(() => API.getJournalEntries())
+			.then((entries) => {
+				document.querySelector(".entryLog").innerHTML = "";
+				renderJournalEntries(entries);
+			});
+	}
+});
