@@ -9,6 +9,7 @@
 	<body>
 		<h1>Adi's Daily Journal</h1>
 		<form action="">
+			<input type="hidden" id="journalId" value="" />
 			<!-- Date of Entry -->
 			<fieldset>
 				<label for="journalDate">Date of Entry</label>
@@ -44,11 +45,11 @@
 
 			<fieldset class="moodFilter">
 				<legend>Filter Journal Entries by Mood</legend>
-				<input type="radio" value="Happy" name="moodDay" />
+				<input type="radio" value="Happy" name="moodDayFilter" />
 				<label>Happy</label>
-				<input type="radio" value="OK" name="moodDay" />
+				<input type="radio" value="OK" name="moodDayFilter" />
 				<label>Okay</label>
-				<input type="radio" value="Sad" name="moodDay" />
+				<input type="radio" value="Sad" name="moodDayFilter" />
 				<label>Sad</label>
 			</fieldset>
 		</form>
